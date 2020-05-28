@@ -38,7 +38,6 @@ public class Main {
         return ScanerContentLoader.INSTANCE.loadCurrencyCode(availableCurrency);
     }
 
-
     private static Map<String, String> currencyMap(XmlParser xmlParser) {
         return cubeList(xmlParser)
                 .stream()
