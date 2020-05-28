@@ -24,7 +24,6 @@ public class ScanerContentLoader {
                 currencyCode = null;
                 System.err.println("Incorrect currency exchange rate, please enter it again.");
             }
-
         } while (currencyCode == null);
         return currencyCode;
     }

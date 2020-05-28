@@ -14,12 +14,10 @@ public class XmlParser {
         UNMARSHALLER = JAXBCONTENT.createUnmarshaller();
     }
 
-
     public Envelope parseEnvelopeXMLToObject(File xmlFile) {
         Envelope envelope = null;
         try {
             JAXBContext JAXBCONTENT = JAXBContext.newInstance(Envelope.class);
-
             Unmarshaller UNMARSHALLER = JAXBCONTENT.createUnmarshaller();
             envelope = (Envelope) UNMARSHALLER.unmarshal(xmlFile);
 
