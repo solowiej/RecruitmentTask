@@ -1,7 +1,6 @@
 package model;
 
 import lombok.Data;
-
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement(name = "Envelope", namespace = "http://www.gesmes.org/xml/2002-08-01")

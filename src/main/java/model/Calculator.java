@@ -9,9 +9,9 @@ public class Calculator {
     private int amount;
     private String currencyValue;
 
-    public Calculator(int amount, String currencyType) {
+    public Calculator(int amount, String currencyValue) {
         this.amount = amount;
-        this.currencyValue = currencyType;
+        this.currencyValue = currencyValue;
     }
 
     public double calculate() {
