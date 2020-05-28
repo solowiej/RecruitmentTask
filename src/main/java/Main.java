@@ -14,17 +14,21 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome in Euro currency calculator!");
 
-        Calculator calculator;
         XmlParser xmlParser;
+        Calculator calculator;
+        String currencyCode;
+        String currencyValue;
+        int currencyAmount;
         try {
             xmlParser = new XmlParser();
             calculator = new Calculator();
 
-            String currencyCode = getCurrencyCode(xmlParser);
-            String currencyValue = availableCurrency.get(currencyCode);
+            currencyCode = getCurrencyCode(xmlParser);
+            currencyValue = availableCurrency.get(currencyCode);
+            currencyAmount = ScanerContentLoader.INSTANCE.loadAmountFromUser();
 
             calculator.setCurrencyValue(currencyValue);
-            calculator.setAmount(ScanerContentLoader.INSTANCE.loadAmountFromUser());
+            calculator.setAmount(currencyAmount);
 
             System.out.println("Result: " + calculator.calculate() + " " + currencyCode);
 
