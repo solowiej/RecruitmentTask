@@ -45,5 +45,4 @@ public class ScanerContentLoader {
         } while (amount == null);
         return amount;
     }
-
 }

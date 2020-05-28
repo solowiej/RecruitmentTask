@@ -15,6 +15,4 @@ public class Envelope {
     private Sender sender;
     @XmlElement(name = "Cube", namespace = "http://www.ecb.int/vocabulary/2002-08-01/eurofxref")
     private Cube cube;
-
-
 }

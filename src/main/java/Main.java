@@ -9,11 +9,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main {
-    private static final File xmlFile = new File("eurofxref-daily.xml");
+    private static final File XMLFILE = new File("eurofxref-daily.xml");
 
     public static void main(String[] args) {
         System.out.println("Welcome in Euro currency calculator!");
-
 
         Calculator calculator;
         XmlParser xmlParser;
@@ -21,7 +20,7 @@ public class Main {
             xmlParser = new XmlParser();
             calculator = new Calculator();
 
-            Map<String, String> availableCurrency = currencyMap(xmlParser, xmlFile);
+            Map<String, String> availableCurrency = currencyMap(xmlParser, XMLFILE);
             String currencyCode = ScanerContentLoader.INSTANCE.loadCurrencyCode(availableCurrency);
             String currencyValue = getCurrencyValue(availableCurrency, currencyCode);
 
@@ -33,7 +32,6 @@ public class Main {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-
     }
 
     private static String getCurrencyValue(Map<String, String> availableCurrency, String currencyCode) {

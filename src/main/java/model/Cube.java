@@ -8,7 +8,6 @@ import java.util.List;
 @XmlType(namespace = "http://www.ecb.int/vocabulary/2002-08-01/eurofxref")
 @XmlAccessorType(XmlAccessType.NONE)
 @Data
-
 public class Cube {
     @XmlAttribute
     private String time;
