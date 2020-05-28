@@ -1,6 +1,5 @@
 import model.Calculator;
 import model.Cube;
-import model.Envelope;
 
 import javax.xml.bind.JAXBException;
 import java.io.File;
