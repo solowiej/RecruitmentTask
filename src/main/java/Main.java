@@ -24,11 +24,6 @@ public class Main {
             xmlParser = new XmlParser();
             calculator = new Calculator();
 
-
-            Envelope envelope = xmlParser.parseEnvelopeXMLToObject(XMLFILE);
-            System.out.println(envelope);
-
-
             currencyCode = getCurrencyCode(xmlParser);
             currencyValue = availableCurrency.get(currencyCode);
             currencyAmount = ScanerContentLoader.INSTANCE.loadAmountFromUser();
