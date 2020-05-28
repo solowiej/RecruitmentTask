@@ -25,7 +25,7 @@ public class Main {
             calculator = new Calculator();
 
 
-            Envelope envelope = xmlParser.parseEnvelopeToObject(XMLFILE);
+            Envelope envelope = xmlParser.parseEnvelopeXMLToObject(XMLFILE);
             System.out.println(envelope);
 
 
@@ -58,7 +58,7 @@ public class Main {
     }
 
     private static List<Cube> cubeList(XmlParser xmlParser) {
-        return xmlParser.parseEnvelopeToObject(XMLFILE).getCube().getCubes()
+        return xmlParser.parseEnvelopeXMLToObject(XMLFILE).getCube().getCubes()
                 .stream()
                 .flatMap(cube -> cube.getCubes().stream())
                 .collect(Collectors.toList());

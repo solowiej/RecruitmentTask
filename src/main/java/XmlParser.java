@@ -15,7 +15,7 @@ public class XmlParser {
     }
 
 
-    public Envelope parseEnvelopeToObject(File xmlFile) {
+    public Envelope parseEnvelopeXMLToObject(File xmlFile) {
         Envelope envelope = null;
         try {
             JAXBContext JAXBCONTENT = JAXBContext.newInstance(Envelope.class);

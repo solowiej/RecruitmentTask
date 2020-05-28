@@ -16,12 +16,12 @@ public class XmlParserTest {
     }
 
     @Test
-    public void shouldParseEnvelopeToObject() {
+    public void shouldParseEnvelopeXMLToObject() {
         //given
         File file = new File("eurofxref-daily.xml");
 
         //when
-        Envelope envelope = xmlParser.parseEnvelopeToObject(file);
+        Envelope envelope = xmlParser.parseEnvelopeXMLToObject(file);
 
         //then
         assertNotNull(envelope);
