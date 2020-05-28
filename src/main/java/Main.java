@@ -22,7 +22,7 @@ public class Main {
 
             Map<String, String> availableCurrency = currencyMap(xmlParser, XMLFILE);
             String currencyCode = ScanerContentLoader.INSTANCE.loadCurrencyCode(availableCurrency);
-            String currencyValue = getCurrencyValue(availableCurrency, currencyCode);
+            String currencyValue = availableCurrency.get(currencyCode);
 
             calculator.setCurrencyValue(currencyValue);
             calculator.setAmount(ScanerContentLoader.INSTANCE.loadAmountFromUser());
@@ -32,10 +32,6 @@ public class Main {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-    }
-
-    private static String getCurrencyValue(Map<String, String> availableCurrency, String currencyCode) {
-        return availableCurrency.get(currencyCode);
     }
 
     private static Map<String, String> currencyMap(XmlParser xmlParser, File file) {
