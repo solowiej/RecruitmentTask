@@ -1,5 +1,6 @@
 import model.Calculator;
 import model.Cube;
+import model.Envelope;
 
 import javax.xml.bind.JAXBException;
 import java.io.File;
@@ -22,6 +23,11 @@ public class Main {
         try {
             xmlParser = new XmlParser();
             calculator = new Calculator();
+
+
+            Envelope envelope = xmlParser.parseEnvelopeToObject(XMLFILE);
+            System.out.println(envelope);
+
 
             currencyCode = getCurrencyCode(xmlParser);
             currencyValue = availableCurrency.get(currencyCode);
