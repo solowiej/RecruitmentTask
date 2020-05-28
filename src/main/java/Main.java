@@ -40,7 +40,7 @@ public class Main {
 
 
     private static Map<String, String> currencyMap(XmlParser xmlParser) {
-        return cubeList(xmlParser, XMLFILE)
+        return cubeList(xmlParser)
                 .stream()
                 .collect(Collectors.toMap(
                         Cube::getCurrency,
@@ -48,8 +48,8 @@ public class Main {
                 ));
     }
 
-    private static List<Cube> cubeList(XmlParser xmlParser, File file) {
-        return xmlParser.parseEnvelopeToObject(file).getCube().getCubes()
+    private static List<Cube> cubeList(XmlParser xmlParser) {
+        return xmlParser.parseEnvelopeToObject(XMLFILE).getCube().getCubes()
                 .stream()
                 .flatMap(cube -> cube.getCubes().stream())
                 .collect(Collectors.toList());
