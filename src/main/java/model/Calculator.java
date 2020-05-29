@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Calculator {
     private int amount;
-    private String currencyValue;
+    private double currencyValue;
 
     public double calculate() {
-        return amount * Double.valueOf(currencyValue);
+        return amount * currencyValue;
     }
 }

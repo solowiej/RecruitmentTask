@@ -17,14 +17,14 @@ public class Main {
         XmlParser xmlParser;
         Calculator calculator;
         String currencyCode;
-        String currencyValue;
+        double currencyValue;
         int currencyAmount;
         try {
             xmlParser = new XmlParser();
             calculator = new Calculator();
 
             currencyCode = getCurrencyCode(xmlParser);
-            currencyValue = availableCurrency.get(currencyCode);
+            currencyValue = Double.parseDouble(availableCurrency.get(currencyCode));
             currencyAmount = ScanerContentLoader.INSTANCE.loadAmountFromUser();
 
             calculator.setCurrencyValue(currencyValue);
